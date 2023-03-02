@@ -8,10 +8,22 @@ version '0.1.0'
 
 sourceCompatibility = 1.8
 
+application {
+    mainClassName = "com.platzi.jobsearch.JobSearch"
+}
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    // https://mvnrepository.com/artifact/com.beust/jcommander
+    // This library is used to get the arguments or commands passed by terminal to our program and parse it to Java objects
+    implementation group: 'com.beust', name: 'jcommander', version: '1.82'
+    // https://mvnrepository.com/artifact/io.github.openfeign/feign-core
+    // This library is for making web requests for us, without writing a lot of code
+    implementation group: 'io.github.openfeign', name: 'feign-core', version: '12.2'
+    // https://mvnrepository.com/artifact/io.github.openfeign/feign-gson
+    // This library is for parsing the API responses in JSON format to Java objects
+    implementation group: 'io.github.openfeign', name: 'feign-gson', version: '12.2'
 }
