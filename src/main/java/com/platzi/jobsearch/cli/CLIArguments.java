@@ -12,6 +12,7 @@ public class CLIArguments {
     // Let's JCommander to declare the parameters, with the @Parameter annotation
     @Parameter(
             required = true,
+            validateWith = CLIKeywordValidator.class,
             descriptionKey = "KEYWORD",
             description = "KEYWORD"
     )
@@ -43,6 +44,7 @@ public class CLIArguments {
 
     @Parameter(
             help = true,
+            validateWith = CLIHelpValidator.class,
             names = "--help",
             description = "Show this help"
     )
